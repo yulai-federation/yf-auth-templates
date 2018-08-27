@@ -1,0 +1,28 @@
+{% extends 'public/middle_box.html' %}
+{% load static %}
+{% block page_title %}Login{% endblock %}
+{% block middle_box_content %}
+    <p style="text-align: center">
+        <img src="https://imageserver.eveonline.com/Alliance/99000102_128.png">
+    </p>
+
+    <p style="text-align: center; font-size: 150%;">
+        Authentication System
+    </p>
+
+    <p style="text-align: center">
+        <a href="{% url 'auth_sso_login' %}">
+            <img src="{% static 'img/sso/EVE_SSO_Login_Buttons_Large_Black.png' %}">
+        </a>
+    </p>
+
+    <p style="text-align: center;">
+        For information on SSO, ESI and security read the CCP Dev Blog <a href="https://www.eveonline.com/article/introducing-esi" target="_blank">Introducing ESI</a>
+    </p>
+
+    <p style="text-align: center;">
+        <a href="https://community.eveonline.com/support/third-party-applications/" target="_blank">
+            Manage ESI Applications
+        </a>
+    </p>
+{% endblock %}
