@@ -41,34 +41,34 @@
                     </div>
                 </div>
                 <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">{% trans "Fit categories" %}</h3>
-                        </div>
-                        <div class="panel-body">
-                            {% for category in y.Categories %}
-                            <span class="label label-success">{{ category }}</span>
-                            {% endfor %}
-                        </div>
+                    <div class="panel-heading">
+                        <h3 class="panel-title">{% trans "Fit categories" %}</h3>
+                    </div>
+                    <div class="panel-body">
+                        {% for category in y.Categories %}
+                        <span class="label label-success">{{ category }}</span>
+                        {% endfor %}
+                    </div>
                 </div>
                 {% endfor %}
                 <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">{% trans "All fits in this Doctrine" %}</h3>
-                        </div>
-                        <div class="panel-body">
-                            <div class="list-group">
-                            {% for arbit, orbit in doctrines_list.items %}
+                    <div class="panel-heading">
+                        <h3 class="panel-title">{% trans "All fits in this Doctrine" %}</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="list-group">
+                        {% for arbit, orbit in doctrines_list.items %}
 
-                                {% for fitting in orbit.Data %}
-                                <a href="{% url 'fleetup:fitting' fitting.FittingId %}" class="list-group-item">
+                            {% for fitting in orbit.Data %}
+                            <a href="{% url 'fleetup:fitting' fitting.FittingId %}" class="list-group-item">
 
-                                <h4 class="list-group-item-heading">{{ fitting.Name }}<span class="pull-right"><img src="https://image.eveonline.com/InventoryType/{{ fitting.EveTypeId }}_32.png" class="img-circle"></span></h4>
-                                <p class="list-group-item-heading">{{ fitting.Role }} - {{ fitting.ShipType }}</p>
-                                </a>
-                            {% endfor %}
-                            {% endfor %}
-                            </div>
+                            <h4 class="list-group-item-heading">{{ fitting.Name }}<span class="pull-right"><img src="https://image.eveonline.com/InventoryType/{{ fitting.EveTypeId }}_32.png" class="img-circle"></span></h4>
+                            <p class="list-group-item-heading">{{ fitting.Role }} - {{ fitting.ShipType }}</p>
+                            </a>
+                        {% endfor %}
+                        {% endfor %}
                         </div>
+                    </div>
                 </div>
             </div>
             <div class="col-lg-4">
