@@ -1,0 +1,13 @@
+{% extends 'public/middle_box.html' %}
+{% load i18n %}
+{% block middle_box_content %}
+    <p style="text-align: center">
+        <img src="https://images.evetech.net/alliances/99000102/logo?size=128">
+    </p>
+
+    <p style="text-align: center; font-size: 150%;">
+        Authentication System
+    </p>
+
+    <div class="alert alert-danger">{% trans 'Invalid or expired activation link.' %}</div>
+{% endblock %}
