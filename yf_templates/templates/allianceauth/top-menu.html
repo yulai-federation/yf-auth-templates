@@ -40,7 +40,7 @@
                 <li><a href="https://forum.yulaifederation.net" target="_blank" rel="noopener">YF Forums</a></li>
                 <li><a href="https://wiki.yulaifederation.net" target="_blank" rel="noopener">YF Wiki</a></li>
                 {% if user.is_authenticated %}
-                    <li><a href="{% url 'auth_logout' %}">{% trans "Logout" %}</a></li>
+                    <li><a href="{% url 'logout' %}">{% trans "Logout" %}</a></li>
                 {% else %}
                     <li><a href="{% url 'authentication:login' %}">{% trans "Login" %}</a></li>
                 {% endif %}
