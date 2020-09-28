@@ -30,10 +30,15 @@
             {% endblock %}
         </style>
     </head>
+
     <body>
-        <div class="container" style="margin-top:150px">
+        <div class="auth-login-box">
             {% block content %}
             {% endblock %}
+        </div>
+
+        <div class="yf-aa-svg-wrapper">
+            {% include "../bundles/svg/ccp_sso.svg" %}
         </div>
     </body>
 </html>
