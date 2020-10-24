@@ -15,7 +15,7 @@
     </p>
 
     <p style="text-align: center">
-        <a class="sso-login-button" href="{% url 'auth_sso_login' %}">
+        <a class="sso-login-button" href="{% url 'auth_sso_login' %}{% if request.GET.next %}?next={{request.GET.next}}{%endif%}">
             <svg>
                 <use xlink:href="#yf-aa-svg-sso"/>
             </svg>
