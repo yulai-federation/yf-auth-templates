@@ -3,4 +3,3 @@ include README.md
 recursive-include yf_templates *.py
 recursive-include yf_templates/static *
 recursive-include yf_templates/templates *
-
