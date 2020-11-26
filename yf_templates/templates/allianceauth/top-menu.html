@@ -33,16 +33,16 @@
                 {% endif %}
                 {% if user.is_authenticated %}
                     {% if user.is_staff %}
-                        <li><a href="{% url 'admin:index' %}">{% trans "Admin" %}</a></li>
+                        <li><a href="{% url 'admin:index' %}">{% translate "Admin" %}</a></li>
                     {% endif %}
                 {% endif %}
                 <li><a href="https://yulaifederation.net" target="_blank" rel="noopener">YF Website</a></li>
                 <li><a href="https://forum.yulaifederation.net" target="_blank" rel="noopener">YF Forums</a></li>
                 <li><a href="https://wiki.yulaifederation.net" target="_blank" rel="noopener">YF Wiki</a></li>
                 {% if user.is_authenticated %}
-                    <li><a href="{% url 'logout' %}">{% trans "Logout" %}</a></li>
+                    <li><a href="{% url 'logout' %}">{% translate "Logout" %}</a></li>
                 {% else %}
-                    <li><a href="{% url 'authentication:login' %}">{% trans "Login" %}</a></li>
+                    <li><a href="{% url 'authentication:login' %}">{% translate "Login" %}</a></li>
                 {% endif %}
                 {% if user.is_superuser %}
                     <li>
