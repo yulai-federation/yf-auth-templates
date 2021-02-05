@@ -24,23 +24,23 @@ jobs:
         uses: pre-commit/action@v2.0.0
 
   # black formatter
-  black-format:
-    needs: pre-commit
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-
-      - name: Run Black Formatter Checks
-        uses: Ahuge/black-action@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BLACK_ARGS: "."
+#  black-format:
+#    needs: pre-commit
+#    runs-on: ubuntu-latest
+#
+#    steps:
+#      - name: Checkout
+#        uses: actions/checkout@v2
+#
+#      - name: Run Black Formatter Checks
+#        uses: Ahuge/black-action@master
+#        env:
+#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#          BLACK_ARGS: "."
 
   # pypi build test
   build-test:
-    needs: black-format
+    needs: pre-commit
     runs-on: ubuntu-latest
 
     steps:
