@@ -1,6 +1,7 @@
 {% load i18n %}
 {% load static %}
 {% load navactive %}
+{% load evelinks %}
 <nav class="navbar navbar-default navbar-static-top auth-navbar-top" role="navigation">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -11,7 +12,7 @@
                 <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand">
-                <img src="{% static 'icons/favicon-32x32.png' %}" style="display: inline-block;" height="32" width="32"/>
+                <img src="{{ 99000102|alliance_logo_url:32 }}" style="display: inline-block;" height="32" width="32" alt="Yulai Federation"/>
                 {{ SITE_NAME }}
             </a>
         </div>
