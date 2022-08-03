@@ -5,40 +5,40 @@
     }
 
     .auth-login-box {
+        background: rgb(48 48 48 / 75%);
+        bottom: 0;
         margin: 0;
         position: absolute;
         top: 0;
-        bottom: 0;
         width: 100%;
-        background: rgb(48 48 48 / 75%);
     }
 
     .auth-login-box-inner {
-        position: absolute;
         bottom: 5vh;
+        position: absolute;
         width: 100%;
     }
 
     .panel-transparent {
         background: transparent;
-        color: rgb(255 255 255);
         border: none;
+        color: rgb(255 255 255);
     }
 
     #lang-select {
-        width: 40%;
         margin-left: auto;
         margin-right: auto;
+        width: 40%;
     }
 
     .sso-login-button {
-        width: 270px;
-        height: 45px;
-        margin-top: 10px;
-        margin-bottom: 15px;
         color: rgb(173 173 173);
         filter: drop-shadow(0 4px 5px rgb(0 0 0 / 40%));
+        height: 45px;
+        margin-bottom: 15px;
+        margin-top: 10px;
         transition: color 0.18s ease-out, filter 0.06s ease-out;
+        width: 270px;
         will-change: color, fill;
     }
 
@@ -48,14 +48,14 @@
     }
 
     .sso-login-button > svg {
-        width: inherit;
         height: inherit;
+        width: inherit;
     }
 
     .yf-aa-svg-wrapper {
-        width: 0;
         height: 0;
         overflow: hidden;
+        width: 0;
     }
 }
 
