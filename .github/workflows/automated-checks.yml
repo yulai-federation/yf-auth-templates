@@ -1,4 +1,4 @@
-name: Automated Checks
+name: Tests
 
 on:
   push:
@@ -16,67 +16,37 @@ on:
       - '**'
 
 jobs:
-  # pre-commit checks
+  # pre-commit Checks
   pre-commit:
     name: Pre Commit Checks
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@main
 
       - name: Set up Python
-        uses: actions/setup-python@v3
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
 
       - name: Run Pre Commit Checks
         uses: pre-commit/action@v3.0.0
 
-  # codacy security scan
-  codacy-security-scan:
-    needs: [pre-commit]
-    name: Codacy Security Scan
-    runs-on: ubuntu-latest
-    steps:
-      # Checkout the repository to the GitHub Actions runner
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      # Execute Codacy Analysis CLI and generate a SARIF output with the security issues identified during the analysis
-      - name: Run Codacy Analysis CLI
-        uses: codacy/codacy-analysis-cli-action@1.1.0
-        with:
-          # Check https://github.com/codacy/codacy-analysis-cli#project-token to get your project token from your Codacy repository
-          # You can also omit the token and run the tools that support default configurations
-          project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
-          verbose: true
-          output: results.sarif
-          format: sarif
-          # Adjust severity of non-security issues
-          gh-code-scanning-compat: true
-          # Force 0 exit code to allow SARIF file generation
-          # This will handover control about PR rejection to the GitHub side
-          max-allowed-issues: 2147483647
-
-      # Upload the SARIF file generated in the previous step
-      - name: Upload SARIF results file
-        uses: github/codeql-action/upload-sarif@v2
-        with:
-          sarif_file: results.sarif
-
   # Pypi Build Test
   pypi-build-test:
-    needs: [codacy-security-scan]
+    needs: [ pre-commit ]
     name: PyPi Build Test
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@main
 
-      - name: Set up Python 3.8
-        uses: actions/setup-python@v2
+      - name: Set up Python
+        uses: actions/setup-python@v4
         with:
-          python-version: 3.8
+          python-version: '3.8' # Minimum supported Python version by AllianceAuth
 
       - name: Install Tools
         run: |
@@ -91,8 +61,8 @@ jobs:
           python -m build
 
       - name: Upload Build Artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
-          name: build
+          name: build-${{ github.event_name }}-${{ github.sha }}
           path: dist
           if-no-files-found: ignore
