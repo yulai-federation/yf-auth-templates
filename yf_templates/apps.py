@@ -3,12 +3,12 @@ App configuration
 """
 
 # Django
-from django.apps import AppConfig
+from django.apps import AppConfig  # pylint: disable=import-error
 
 from . import __version__
 
 
-class YfTemplatesConfig(AppConfig):
+class YfTemplatesConfig(AppConfig):  # pylint: disable=too-few-public-methods
     """
     Template configuration
     """
