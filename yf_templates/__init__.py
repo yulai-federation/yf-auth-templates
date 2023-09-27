@@ -2,5 +2,10 @@
 App init
 """
 
-__version__ = "0.3.0"
+# Standard Library
+from importlib import metadata
+
+__version__ = metadata.version(distribution_name="yf-templates")
 __title__ = "Yulai Federation Template Overrides"
+
+del metadata
