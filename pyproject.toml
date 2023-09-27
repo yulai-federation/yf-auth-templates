@@ -44,9 +44,6 @@ dependencies = [
 Changelog = "https://github.com/yulai-federation/yf-auth-templates/blob/master/CHANGELOG.md"
 "Issue / Bug Reports" = "https://github.com/yulai-federation/yf-auth-templates/issues"
 
-[tool.hatch.version]
-path = "yf_templates/__init__.py"
-
 [tool.hatch.build]
 include = [
     "/yf_templates",
