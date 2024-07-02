@@ -16,7 +16,7 @@ keywords = [
     "template_override",
     "yulai_federation",
 ]
-license = {file = "LICENSE"}
+license = { file = "LICENSE" }
 authors = [
     { name = "Peter Pfeufer", email = "develop@ppfeufer.de" },
 ]
@@ -34,15 +34,15 @@ classifiers = [
     "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
     "Topic :: Internet :: WWW/HTTP",
     "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
 ]
 dependencies = [
     "allianceauth>=3",
 ]
-[project.urls]
-Changelog = "https://github.com/yulai-federation/yf-auth-templates/blob/master/CHANGELOG.md"
-"Issue / Bug Reports" = "https://github.com/yulai-federation/yf-auth-templates/issues"
+urls.Changelog = "https://github.com/yulai-federation/yf-auth-templates/blob/master/CHANGELOG.md"
+urls."Issue / Bug Reports" = "https://github.com/yulai-federation/yf-auth-templates/issues"
 
 [tool.hatch.build]
 include = [

@@ -1,5 +1,10 @@
 /build/
 /dist/
 /*.egg-info/
-/yf_templates/__pycache__/
+__pycache__
 .idea/
+/htmlcov/
+node_modules/
+/.coverage
+/.tox/
+/coverage.xml
